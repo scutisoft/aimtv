@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-
-import 'pages/loginpage/login.dart';
 import 'pages/splashScreen.dart';
 
 void main() {
@@ -15,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Solar',
+      title: 'Aim TV',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

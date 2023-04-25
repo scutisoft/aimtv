@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -16,7 +15,7 @@ import '../model/parameterMode.dart';
 import '../notifier/configuration.dart';
 import '../utils/constants.dart';
 import '../utils/sizeLocal.dart';
-import 'loginpage/login.dart';
+import 'landingPage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -25,28 +24,26 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   final LocalAuthentication auth = LocalAuthentication();
 
-  navigate(){
-    Get.off(loginPage());
+  navigate() {
+    Get.off(LandingPage());
   }
 
   @override
   void initState() {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,overlays: [SystemUiOverlay.bottom,SystemUiOverlay.top]);
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top]);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-
-
-
       /*navigate();
       return;*/
-      initPlatformState().then((value){
+      initPlatformState().then((value) {
         checkUserData();
         //navigate();
       });
-      if(Platform.isAndroid){
+      if (Platform.isAndroid) {
         _checkBiometrics();
       }
     });
@@ -67,64 +64,63 @@ class _SplashScreenState extends State<SplashScreen> {
     setSharedPrefBool(canCheckBiometrics, SP_HASFINGERPRINT);
   }
 
-
-  void checkUserData() async{
-    await languageInit();
+  void checkUserData() async {
+    // await languageInit();
     navigate();
 
     return;
     //await getFirebaseToken();
-    String userId=await getSharedPrefString(SP_USER_ID);
-    if(userId.isEmpty){
+    String userId = await getSharedPrefString(SP_USER_ID);
+    if (userId.isEmpty) {
       navigate();
-    }
-    else{
+    } else {
       getDeviceStatus(userId);
     }
   }
 
-  void getDeviceStatus(userId) async{
+  void getDeviceStatus(userId) async {
+    String pin = await getSharedPrefString(SP_PIN);
+    List<ParameterModel> params = [];
+    params.add(ParameterModel(
+        Key: "SpName", Type: "String", Value: Sp.getDeviceStatus));
+    params
+        .add(ParameterModel(Key: "LoginUserId", Type: "String", Value: userId));
+    params.add(
+        ParameterModel(Key: "DeviceId", Type: "String", Value: getDeviceId()));
+    params.add(
+        ParameterModel(Key: "database", Type: "String", Value: getDatabase()));
 
-    String pin=await getSharedPrefString(SP_PIN);
-    List<ParameterModel> params=[];
-    params.add(ParameterModel(Key: "SpName", Type: "String", Value: Sp.getDeviceStatus));
-    params.add(ParameterModel(Key: "LoginUserId", Type: "String", Value: userId));
-    params.add(ParameterModel(Key: "DeviceId", Type: "String", Value: getDeviceId()));
-    params.add(ParameterModel(Key: "database", Type: "String", Value: getDatabase()));
-
-    ApiManager().GetInvoke(params).then((response){
-      if(response[0]){
-        try{
-          var parsed=json.decode(response[1]);
+    ApiManager().GetInvoke(params).then((response) {
+      if (response[0]) {
+        try {
+          var parsed = json.decode(response[1]);
           console("$parsed");
-          var t=parsed['Table'];
-          if(t[0]['IsRegistered']){
-            if(pin.isNotEmpty){
+          var t = parsed['Table'];
+          if (t[0]['IsRegistered']) {
+            if (pin.isNotEmpty) {
               setSharedPrefString(t[0]['TokenNumber'], SP_TOKEN);
               //Get.off(PinScreenLogin());
-            }
-            else{
+            } else {
               navigate();
             }
-          }
-          else{
+          } else {
             navigate();
           }
-        }catch(e){
+        } catch (e) {
           navigate();
         }
       }
     });
   }
 
-  Future languageInit() async{
+  Future languageInit() async {
     await Language.parseJson(selectedLanguage.value);
     //setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    topPadding=MediaQuery.of(context).padding.top;
+    topPadding = MediaQuery.of(context).padding.top;
     SizeConfig().init(context);
 
     //SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
@@ -137,7 +133,7 @@ class _SplashScreenState extends State<SplashScreen> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             alignment: Alignment.center,
-            color: ColorUtil.themeWhite,
+            color: ColorUtil.themeBlack,
             child: Image.asset("assets/logo.png"),
           ),
         ],
