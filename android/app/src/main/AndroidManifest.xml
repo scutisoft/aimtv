@@ -2,8 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bridget.aimtv">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
    <application
-        android:label="Sirpi"
+        android:label="Ma Organics"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"
@@ -26,6 +28,7 @@
             Anandham
             Sirpi
             Sirpi Mentor
+            Ma Organics
 
 
              Specifies an Android theme to apply to this Activity as soon as

@@ -11,7 +11,8 @@ class MyConstants {
   //Anandham
   //Sirpi
   //Sirpi Mentor
-  static String appName = "Sirpi";
+  //Ma Organics
+  static String appName = "Ma Organics";
   //static String appName="RadiantECS_Dev";
   static String appVersion = "1.0.6";
   static String appId = "com.scutisoft.nammaramnamkadamai";

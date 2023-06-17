@@ -1,9 +1,7 @@
-import 'package:aimtv/sirpiPages/splashScreen.dart';
 import 'package:aimtv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'anandhamPages/splashScreen.dart';
-import 'pages/splashScreen.dart';
+import 'maOrganicsPages/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +20,8 @@ class MyApp extends StatelessWidget {
       ),
      // home: const SplashScreen(),
      // home: const AnandhamSplashScreen(),
-      home: const SirpiSplashScreen(),
+      //home: const SirpiSplashScreen(),
+      home: const MaOrganicsSplashScreen(),
     );
   }
 }
