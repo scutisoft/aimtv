@@ -13,9 +13,11 @@ class CustomCheckBox extends StatelessWidget {
   double icnSize;
   String content;
   bool onlyCheckbox;
+  double br;
+  Widget? unSelIcon;
   CustomCheckBox({required this.isSelect,this.ontap,this.height=22,this.selectColor=const Color(0xff019342),
   this.unSelectColor=const Color(0xffE5E5ED),this.margin=const EdgeInsets.only(left: 0),this.icnSize=20.0,
-  this.content="",this.onlyCheckbox=false});
+  this.content="",this.onlyCheckbox=false,this.br=5,this.unSelIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,11 @@ class CustomCheckBox extends StatelessWidget {
         margin: margin,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(br),
+          // border: Border.all(color: ColorUtil.primary),
           color:isSelect?selectColor: unSelectColor,
         ),
-        child: isSelect?Icon(Icons.done,color:Colors.white,size: icnSize,):Container(),
+        child: isSelect?Icon(Icons.done,color:Colors.white,size: icnSize,):unSelIcon??Container(),
       ),
     ):
     GestureDetector(
@@ -49,6 +52,7 @@ class CustomCheckBox extends StatelessWidget {
               margin: margin,
               alignment: Alignment.center,
               decoration: BoxDecoration(
+                border: Border.all(color: ColorUtil.greyBorder),
                 borderRadius: BorderRadius.circular(5),
                 color:isSelect?selectColor: unSelectColor,
               ),

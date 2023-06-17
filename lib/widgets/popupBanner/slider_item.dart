@@ -164,7 +164,10 @@ class _SliderItemState extends State<SliderItem> {
   Widget _imageItem(int index, String item) {
     return GestureDetector(
       onTap: () => widget.onClick(index),
-      child:widget.isLocal?Image.file(File(item),fit: widget.fit): widget.fromNetwork
+      child:widget.isLocal?Image.asset(
+        item,
+        fit: widget.fit,
+      ): widget.fromNetwork
           ? Image.network(
               item,
               fit: widget.fit,

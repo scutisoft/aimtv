@@ -1,5 +1,6 @@
-import 'dart:convert';
+  import 'dart:convert';
 import 'dart:io';
+import 'package:aimtv/pages/kaylirCanteen/orderType.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ import '../model/parameterMode.dart';
 import '../notifier/configuration.dart';
 import '../utils/constants.dart';
 import '../utils/sizeLocal.dart';
-import 'landingPage.dart';
+import 'aimTV/landingPage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -27,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
   final LocalAuthentication auth = LocalAuthentication();
 
   navigate() {
-    Get.off(LandingPage());
+    //Get.off(KaylirWebView());
+    Get.off(OrderTypePage());
   }
 
   @override
@@ -133,8 +135,10 @@ class _SplashScreenState extends State<SplashScreen> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             alignment: Alignment.center,
-            color: ColorUtil.themeBlack,
-            child: Image.asset("assets/logo.png"),
+            color: ColorUtil.themeWhite,
+            child: Image.asset('assets/Kaylir/logo.png')//Kaylir
+
+            /*Image.asset("assets/logo.png"),*/ //AimTV
           ),
         ],
       ),

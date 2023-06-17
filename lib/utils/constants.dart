@@ -8,7 +8,10 @@ import '../helper/language.dart';
 
 class MyConstants {
   MyConstants._();
-  static String appName = "TreeDonate";
+  //Anandham
+  //Sirpi
+  //Sirpi Mentor
+  static String appName = "Sirpi";
   //static String appName="RadiantECS_Dev";
   static String appVersion = "1.0.6";
   static String appId = "com.scutisoft.nammaramnamkadamai";
@@ -95,12 +98,12 @@ ts18(Color color,
 }
 
 ts20(Color color,
-    {String fontfamily = 'RR', double fontsize = 18, double ls = 0.1}) {
+    {String fontfamily = 'RR', double fontsize = 18, double ls = 0.1,FontWeight? fontWeight}) {
   return TextStyle(
       fontSize: fontsize,
       fontFamily: fontfamily,
       color: color,
-      letterSpacing: ls);
+      letterSpacing: ls,fontWeight: fontWeight);
 }
 
 String getLangFontFamily(String ff) {

@@ -127,7 +127,7 @@ class HE_ListViewBody extends StatelessWidget {
           itemCount: widgetList.length,
           shrinkWrap: true,
           //controller: lv_controller,
-          physics: const NeverScrollableScrollPhysics(),
+          //physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (ctx,i){
             return widgetList[i];
           },

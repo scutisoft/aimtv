@@ -1,5 +1,8 @@
+import 'package:aimtv/sirpiPages/splashScreen.dart';
+import 'package:aimtv/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'anandhamPages/splashScreen.dart';
 import 'pages/splashScreen.dart';
 
 void main() {
@@ -12,11 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Aim TV',
+      title: MyConstants.appName,
+      //Aim TV
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+     // home: const SplashScreen(),
+     // home: const AnandhamSplashScreen(),
+      home: const SirpiSplashScreen(),
     );
   }
 }

@@ -165,7 +165,9 @@ class PinWidget extends StatelessWidget {
 class DoneBtn extends StatelessWidget {
   String title;
   VoidCallback onDone;
-  DoneBtn({required this.onDone,required this.title});
+  Color? bg;
+  Color? tc;
+  DoneBtn({required this.onDone,required this.title,this.bg,this.tc});
 
   @override
   Widget build(BuildContext context) {
@@ -176,10 +178,10 @@ class DoneBtn extends StatelessWidget {
         width: SizeConfig.screenWidth!*0.6,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: ColorUtil.secondary,
+          color: bg??ColorUtil.secondary,
         ),
         alignment: Alignment.center,
-        child: Text(title,style: ts18(Colors.white,fontsize: 18,fontfamily: 'Med'),textAlign: TextAlign.center,),
+        child: Text(title,style: ts18(tc??Colors.white,fontsize: 18,fontfamily: 'Med'),textAlign: TextAlign.center,),
       ),
     );
   }
