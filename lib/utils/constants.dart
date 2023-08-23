@@ -12,7 +12,8 @@ class MyConstants {
   //Sirpi
   //Sirpi Mentor
   //Kiosk
-  static String appName = "Sirpi";
+  // static String appName = "Sirpi";
+  static String appName = "Ma Organics";
   //static String appName="RadiantECS_Dev";
   static String appVersion = "1.0.6";
   static String appId = "com.scutisoft.nammaramnamkadamai";

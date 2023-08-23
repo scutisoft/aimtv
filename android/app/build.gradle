@@ -39,9 +39,11 @@ android {
        // applicationId "com.bridget.aimtv"
         //applicationId "com.bridget.kaylir"
         //applicationId "com.bridget.anandham"
-        applicationId "com.bridget.sirpi"
+        //applicationId "com.bridget.sirpi"
         //applicationId "com.bridget.sirpimentor"
+
 //        applicationId "com.bridget.kiosk"
+        applicationId "com.bridget.maorganics"
         minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
