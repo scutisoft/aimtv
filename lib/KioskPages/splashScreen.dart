@@ -14,21 +14,22 @@ import '../model/parameterMode.dart';
 import '../notifier/configuration.dart';
 import '../utils/constants.dart';
 import '../utils/sizeLocal.dart';
-import 'sirpiWebView.dart';
+import 'kiosk.dart';
 
 
-class SirpiSplashScreen extends StatefulWidget {
-  const SirpiSplashScreen({Key? key}) : super(key: key);
+class KioskSplashScreen extends StatefulWidget {
+  const KioskSplashScreen({Key? key}) : super(key: key);
   @override
-  _SirpiSplashScreenState createState() => _SirpiSplashScreenState();
+  _KioskSplashScreenState createState() => _KioskSplashScreenState();
 }
 
-class _SirpiSplashScreenState extends State<SirpiSplashScreen> {
+class _KioskSplashScreenState extends State<KioskSplashScreen> {
   final LocalAuthentication auth = LocalAuthentication();
 
   navigate() {
     //Get.off(KaylirWebView());
-    Get.off(SirpiWebView());
+    // Get.off(SirpiWebView());
+    Get.off(KioskPage());
   }
 
   @override
@@ -136,7 +137,8 @@ class _SirpiSplashScreenState extends State<SirpiSplashScreen> {
               alignment: Alignment.center,
             //  color: Color(0xFFFF7899),
             color: Colors.white,
-              child: Image.asset('assets/sirpi/sirpiLogo.png')
+              child: Image.asset('assets/kiosk/Kiosklogo.png')
+            // Sirpi Image.asset('assets/sirpi/sirpilogo.png')
             //Kaylir Image.asset('assets/Kaylir/logo.png')//Kaylir
 
             /*Image.asset("assets/logo.png"),*/ //AimTV

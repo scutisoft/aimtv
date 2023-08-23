@@ -20,18 +20,18 @@ class _LandingPageState extends State<LandingPage> {
   @override
   int selectTopSale = 0;
 
-  List<dynamic> TrendingVideo = [
-    {
-      "Img": "assets/aimTV/maxresdefault.jpg",
-      "title": "The fun never stops with",
-      "Subtitle": "South Park"
-    },
-    {
-      "Img": "assets/aimTV/tvimages.jpg",
-      "title": "The fun never stops with",
-      "Subtitle": "South Park"
-    },
-  ];
+    List<dynamic> TrendingVideo = [
+      {
+        "Img": "assets/aimTV/maxresdefault.jpg",
+        "title": "The fun never stops with",
+        "Subtitle": "South Park"
+      },
+      {
+        "Img": "assets/aimTV/tvimages.jpg",
+        "title": "The fun never stops with",
+        "Subtitle": "South Park"
+      },
+    ];
   List<dynamic> Category = [
     {
       "CatgName": "All",

@@ -58,14 +58,14 @@ class ArrowBack extends StatelessWidget {
     return  GestureDetector(
       onTap: onTap,
       child: Container(
-          height: 40,
-          width: 40 ,
+          height: 60,
+          width: 60 ,
           decoration: BoxDecoration(
             color: ColorUtil.primary,
             shape: BoxShape.circle
           ),
           child: Center(
-            child: Icon(Icons.arrow_back_ios_outlined,color: iconColor,size: 20,),
+            child: Icon(Icons.arrow_back_ios_outlined,color: iconColor,size: 30,),
           )
       ),
     );

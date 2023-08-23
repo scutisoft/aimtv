@@ -23,7 +23,7 @@ class ApiManager{
     // var itemsUrl="http://192.168.1.102//nextStop_dev///api/Mobile/GetInvoke";
       var itemsUrl="${GetBaseUrl()}/api/Mobile/GetInvoke";
 
-      final response = await http.post(Uri.parse(itemsUrl),
+      final response = await http.post(Uri.parse('https://jsonplaceholder.typicode.com/todos'),
           headers: {"Content-Type": "application/json"},
           body: json.encode(body)
       ).timeout(Duration(seconds: 30),onTimeout: ()=>onTme());

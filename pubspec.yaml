@@ -104,6 +104,9 @@ flutter:
     - assets/anandham/capBuildIcon/
     - assets/anandham/capBuildIcon/yogaImg/
     - assets/sirpi/
+    - assets/kiosk/
+    - assets/cinema/
+    - assets/cinema/top_movies/
     #- assets/Kaylir/
    # - assets/aimTV/
 

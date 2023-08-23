@@ -41,6 +41,7 @@ android {
         //applicationId "com.bridget.anandham"
         applicationId "com.bridget.sirpi"
         //applicationId "com.bridget.sirpimentor"
+//        applicationId "com.bridget.kiosk"
         minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

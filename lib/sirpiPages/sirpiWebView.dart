@@ -23,7 +23,7 @@ class _SirpiWebViewState extends State<SirpiWebView> {
   //Mentor  https://s3.amazonaws.com/sirpimentor.com/view/login-latest.html
 
   late final WebViewController _controller;
-  String url='https://s3.amazonaws.com/student.com/view/Student/login-latest.html';
+  String url='http://45.126.252.78/sirpi_UAT';
   @override
   void initState(){
     if (Platform.isAndroid) WebView.platform = AndroidWebView();

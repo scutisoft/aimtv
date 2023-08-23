@@ -1,5 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:aimtv/CinemaPages/locationPage.dart';
+import 'package:aimtv/utils/colorUtil.dart';
+
 import '/anandhamPages/loginpage/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,21 +17,21 @@ import '../model/parameterMode.dart';
 import '../notifier/configuration.dart';
 import '../utils/constants.dart';
 import '../utils/sizeLocal.dart';
-import 'sirpiWebView.dart';
 
 
-class SirpiSplashScreen extends StatefulWidget {
-  const SirpiSplashScreen({Key? key}) : super(key: key);
+class CinemaSplashScreen extends StatefulWidget {
+  const CinemaSplashScreen({Key? key}) : super(key: key);
   @override
-  _SirpiSplashScreenState createState() => _SirpiSplashScreenState();
+  _CinemaSplashScreenState createState() => _CinemaSplashScreenState();
 }
 
-class _SirpiSplashScreenState extends State<SirpiSplashScreen> {
+class _CinemaSplashScreenState extends State<CinemaSplashScreen> {
   final LocalAuthentication auth = LocalAuthentication();
 
   navigate() {
     //Get.off(KaylirWebView());
-    Get.off(SirpiWebView());
+    // Get.off(SirpiWebView());
+    Get.off(LocationPage());
   }
 
   @override
@@ -126,22 +129,44 @@ class _SirpiSplashScreenState extends State<SirpiSplashScreen> {
 
     //SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     //SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,overlays: [SystemUiOverlay.bottom]);
-    return SafeArea(
-      bottom: MyConstants.bottomSafeArea,
-      child: Stack(
-        children: [
-          Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              alignment: Alignment.center,
-            //  color: Color(0xFFFF7899),
-            color: Colors.white,
-              child: Image.asset('assets/sirpi/sirpiLogo.png')
-            //Kaylir Image.asset('assets/Kaylir/logo.png')//Kaylir
+    return Scaffold(
+    backgroundColor:  ColorUtil.primary,
+      body: SafeArea(
+        bottom: MyConstants.bottomSafeArea,
+        child: Stack(
+          children: [
+            Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.center,
+              //  color: Color(0xFFFF7899),
+              color: ColorUtil.primary,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/cinema/popcorn.png',width: 200,),
+                    SizedBox(height: 5,),
+                    Row(
+                      crossAxisAlignment:CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/cinema/emoji.png',fit: BoxFit.contain,width: 40,),
+                        SizedBox(width: 5,),
+                        Text('My Cinema Ticket',style: ts20(ColorUtil.themeWhite,fontsize: 28,fontfamily: "RB"),),
+                        SizedBox(width: 5,),
+                        Image.asset('assets/cinema/emoji.png',width: 40,fit: BoxFit.contain,)
+                      ],
+                    )
+                  ],
+                )
+              // Sirpi Image.asset('assets/sirpi/sirpilogo.png')
+              //Kaylir Image.asset('assets/Kaylir/logo.png')//Kaylir
 
-            /*Image.asset("assets/logo.png"),*/ //AimTV
-          ),
-        ],
+              /*Image.asset("assets/logo.png"),*/ //AimTV
+            ),
+          ],
+        ),
       ),
     );
   }
