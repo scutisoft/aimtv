@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
       ),
      // home: const SplashScreen(),
      // home: const AnandhamSplashScreen(),
-     home: const SirpiSplashScreen(),
+     // home: const SirpiSplashScreen(),
      // home:  CinemaSplashScreen(),
-      // home:  KioskSplashScreen(),
+      home:  KioskSplashScreen(),
       //home: const SirpiSplashScreen(),
       // home: const MaOrganicsSplashScreen(),
     );
